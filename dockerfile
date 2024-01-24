@@ -1,5 +1,5 @@
 # Muitistage Dockerfile to first build the static site, then using nginx serve the static site
-FROM --platformlinux/arm64 ruby:3.1.3 as builder
+FROM --platform=linux/arm64 ruby:3.1.3 as builder
 WORKDIR /usr/src/app
 COPY Gemfile .
 RUN bundle install
