@@ -1,11 +1,13 @@
-# Create a Jekyll container from a Ruby Alpine image
+# Muitistage Dockerfile to first build the static site, then using nginx serve the static site
+FROM ruby:3.1.3 as builder
+WORKDIR /usr/src/app
+COPY Gemfile jekyll-theme-chirpy.gemspec ./
+RUN bundle install
+COPY . .
+RUN JEKYLL_ENV=production bundle exec jekyll build
 
-# At a minimum, use Ruby 2.5 or later
-FROM ruby:2.7-alpine3.15
-
-# Add Jekyll dependencies to Alpine
-RUN apk update
-RUN apk add --no-cache build-base gcc cmake git
-
-# Update the Ruby bundler and install Jekyll
-RUN gem update bundler && gem install bundler jekyll
+#Copy _sites from build to Nginx Container to serve site
+FROM nginx:latest
+COPY --from=builder /usr/src/app/_site /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
