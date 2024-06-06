@@ -1,27 +1,15 @@
-diff --git a/_layouts/home.html b/_layouts/home.html
-index 903573b..9e21daf 100644
---- a/_layouts/home.html
-+++ b/_layouts/home.html
-@@ -40,6 +40,8 @@ layout: page
-   {% endfor %}
- {% endif %}
+{{ content | markdownify }}
 
-+{{ content | markdownify }}
-+
- <div id="post-list">
+<div id="post-list">
 
- {% for post in posts %}
-diff --git a/index.html b/index.html
-index 1357b08..d4e3689 100644
---- a/index.html
-+++ b/index.html
-@@ -2,3 +2,9 @@
- layout: home
- # Index page
- ---
-+
-+## test header
-+
-+```
-+test code block
-+```
+{% for post in posts %}
+./index.html
+layout: home
+# Index page
+---
+
+## test header
+
+```
+test code block
+```
