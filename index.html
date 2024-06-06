@@ -1,12 +1,27 @@
----
-layout: aout
-# Index page
----
+diff --git a/_layouts/home.html b/_layouts/home.html
+index 903573b..9e21daf 100644
+--- a/_layouts/home.html
++++ b/_layouts/home.html
+@@ -40,6 +40,8 @@ layout: page
+   {% endfor %}
+ {% endif %}
 
-<h1>Hi! Welcome to my personal website!</h1> 
++{{ content | markdownify }}
++
+ <div id="post-list">
 
-<p>I am Kieran, a PhD student at the University of Strathclyde, Scotland. I completed a Bsc in Computer Science at the University of Hull in 2022.</p>
-
-<p>My PhD currently focuses on how faith based organisations such as churches and other faith buildings use information behaviours and practices when interacting with the community and potentially vulnerable indivduals.</p>
-
-<p>I am avid open source enthuiast often contributing to awesome-selfhosted and other lists such as remote-jobs. </p>
+ {% for post in posts %}
+diff --git a/index.html b/index.html
+index 1357b08..d4e3689 100644
+--- a/index.html
++++ b/index.html
+@@ -2,3 +2,9 @@
+ layout: home
+ # Index page
+ ---
++
++## test header
++
++```
++test code block
++```
