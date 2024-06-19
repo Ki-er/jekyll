@@ -9,4 +9,4 @@ I try to include links for all of my papers. Some of the links open PDFs, others
 
 ## 2024
 
-Robson, K, Ruthven, I & Innocenti, P 2024, 'God’s intermediaries: a study into chaplains' information behaviour', Paper presented at Information Seeking in Context 2024 (ISIC2024), Aalborg, Denmark, 26/08/24 - 29/08/24.
+Robson, K., Ruthven, I., & Innocenti, P. (2024). God’s intermediaries: a study into chaplains’ information behaviour. Information Research an International Electronic Journal, 29(2), 512–524. https://doi.org/10.47989/ir292844
